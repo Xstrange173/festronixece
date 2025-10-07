@@ -1,24 +1,9 @@
-import localFont from 'next/font/local';
-
-const geist = localFont({
-  src: [
-    {
-      path: '../public/fonts/Geist/variable/Geist[wght].ttf',
-      weight: '100 900',
-      style: 'normal',
-    },
-    {
-      path: '../public/fonts/Geist/variable/Geist-Italic[wght].ttf',
-      weight: '100 900',
-      style: 'italic',
-    },
-  ],
-  variable: '--font-geist',
-});
+import { GeistSans } from 'geist/font/sans';
+import { GeistMono } from 'geist/font/mono';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={geist.variable}>
+    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body>{children}</body>
     </html>
   );
